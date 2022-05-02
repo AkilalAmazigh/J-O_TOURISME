@@ -39,76 +39,88 @@ create table attraction (
     idattraction int(3) not null auto_increment,
     nomAttraction varchar(50),
     prix varchar(50),
-    arrondissement varchar(50),
+    arrondissement int(5),
     primary key (idattraction)
 );
 create table parc (
     idparc int(3) not null auto_increment,
     nomParc varchar(50),
     description text,
-    arrondissement varchar(50),
+    arrondissement int(5),
     primary key (idparc)
 );
 create table restaurant (
     idrestauant int(3) not null auto_increment,
-    nom varchar(50),
-    prenom varchar(50),
-    qualification varchar(50),
-    email varchar(50),
-    mdp varchar(50),
+    nomRestaurant varchar(50),
+    arrondissement int(5),
+    type varchar(50),
+    horaires time, 
+    capacite int(3)
+    tel varchar(50),
     primary key (idrestauant)
 );
 create table bar (
     idbar int(3) not null auto_increment,
-    nom varchar(50),
-    prenom varchar(50),
-    qualification varchar(50),
-    email varchar(50),
-    mdp varchar(50),
+    nomBar varchar(50),
+    capacite int(3),
+    arrondissement int(5),
+    type varchar(50),
+    tel varchar(50),
     primary key (idbar)
 );
 create table centre_commercial (
     idcentre_commercial int(3) not null auto_increment,
-    nom varchar(50),
-    prenom varchar(50),
-    qualification varchar(50),
-    email varchar(50),
-    mdp varchar(50),
+    nomCentre varchar(50),
+    nbBoutique varchar(50),
+    arrondissement int(5),
+    horaires time,
     primary key (idcentre_commercial)
 );
 create table metro (
     idmetro int(3) not null auto_increment,
-    nom varchar(50),
-    prenom varchar(50),
-    qualification varchar(50),
-    email varchar(50),
-    mdp varchar(50),
+    ligne varchar(10)
+    stations varchar(50),
+    prix float(2,2),
+    horaires time,
     primary key (idmetro)
 );
 create table piscine (
     idpiscine int(3) not null auto_increment,
-    nom varchar(50),
-    prenom varchar(50),
-    qualification varchar(50),
-    email varchar(50),
-    mdp varchar(50),
+    nomPiscine varchar(50),
+    arrondissement int(5), 
+    horaires time,
+    tel varchar(50),
     primary key (idpiscine)
 );
 create table salle_de_sport (
-    idpiscine int(3) not null auto_increment,
-    nom varchar(50),
-    prenom varchar(50),
-    qualification varchar(50),
-    email varchar(50),
-    mdp varchar(50),
+    idpsalle_de_sport int(3) not null auto_increment,
+    nomSalle varchar(50),
+    arrondissement int(5),
+    capacite int(5),
+    equipement varchar(50),
+    tel varchar(50),
     primary key (idpiscine)
 );
 create table user (
     iduser int(3) not null auto_increment,
-    nom varchar(50), 
+    nom varchar(50),
     prenom varchar(50),
-    qualification varchar(50),
     email varchar(50),
-    mdp varchar(50),
-    primary key (iduser)
+    mdp varchar(255),
+    role enum("admin", "user"),
+    primary key(iduser)
+);
+create table reservation (
+    foreign key(client) references client(idclient),
+    foreign key(monument) references monument(idmonument)
+    foreign key(evenement) references evenement(idevenement)
+    foreign key(hotel) references hotel(idhotel)
+    foreign key(attraction) references attraction(idattravtion)
+    foreign key(parc) references parc(idparc)
+    foreign key(restaurant) references restaurant(idrestaurant)
+    foreign key(bar) references bar(idbar)
+    foreign key(centre_commercial) references centre_commercial(idcentre_commercial)
+    foreign key(metro) references metro(idmetro)
+    foreign key(salle_de_sport) references salle_de_sport(idsalle_de_sport)
+    foreign key(user) references user(iduser)
 );
