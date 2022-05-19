@@ -3,4 +3,5 @@
     $bdd = "J_O_Tourisme";
     $user = "root";
     $mdp = "root";
+
 ?>
