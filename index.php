@@ -43,7 +43,7 @@
             require_once("index.php");
             break;
         case 1:
-            require_once("evenment.php");
+            require_once("evenement.php");
             break;
         case 2:
             require_once("typeservice.php");

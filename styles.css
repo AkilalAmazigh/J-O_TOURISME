@@ -9,7 +9,8 @@
 /* navbar */
 
 .navigation_navbar {
-    background-color: brown;
+    /* background-color: #8E0808; */
+    background: linear-gradient(-90deg, rgba(156,156,156,1) 0%, rgba(18,103,120,0.9052214635854342) 38%, rgba(9,58,121,0.9220281862745098) 80%);
 }
 
 .navigation_navbar ul {
