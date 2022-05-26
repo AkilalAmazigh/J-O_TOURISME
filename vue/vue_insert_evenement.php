@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td> Nom de l'évènement </td>
-            <td><input type="text" name="nomEvent"></td>
+            <td><input type="text" name="nomEvenement"></td>
         </tr>
         <tr>
             <td> Description de l'évènement </td>
@@ -35,8 +35,8 @@
             <td><input type="number" name="capacite"></td>
         </tr>
         <tr>
-            <td> Id Capacité </td>
-            <td><input type="number" name="capacite"></td>
+            <td> Id Catégorie </td>
+            <td><input type="number" name="idcategorie"></td>
         </tr>
         <tr>
             <td><input type="reset" name="Annuler" value="Annuler" ></td>

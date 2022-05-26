@@ -25,7 +25,7 @@
 
             // s'il y a des traitements à faire
 
-            // on renvoie les clients 
+            // on renvoie les evenements 
             return $lesEvenements;
         }
     }

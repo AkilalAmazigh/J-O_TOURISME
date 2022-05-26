@@ -15,10 +15,10 @@
     </tr>
 
     <?php
-        foreach($lesEvements as $unEvenement){
+        foreach($lesEvenements as $unEvenement){
             echo 
             "<tr>
-                <td>".$unEvenement["Idevenement"]."</td>
+                <td>".$unEvenement["idevenement"]."</td>
                 <td>".$unEvenement["type"]."</td>
                 <td>".$unEvenement["dateEvent"]."</td>
                 <td>".$unEvenement["nomEvenement"]."</td>

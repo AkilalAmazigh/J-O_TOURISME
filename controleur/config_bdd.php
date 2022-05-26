@@ -1,6 +1,6 @@
 <?php
     $serveur = "localhost:8889";
-    $bdd = "J_O_Tourisme";
+    $bdd = "jo_paris";
     $user = "root";
     $mdp = "root";
 

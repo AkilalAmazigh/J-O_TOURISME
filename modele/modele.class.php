@@ -17,13 +17,13 @@ class Modele
         }
     }
 
-    //////////// Evenements
+    //////////// Evenements //////////////
 
     public function insertEvenement($tab)
     {
-        $requete = "insert into client values (null, :type, :dateEvent, :nomEvenement, :description, :adresse, :horraireD, :horraireF, :capacite, :idcategorie)";
+        $requete = "insert into evenement values (null, :type, :dateEvent, :nomEvenement, :description, :adresse, :horraireD, :horraireF, :capacite, :idcategorie)";
         $donnees = array(
-            ":type" => $tab['nom'],
+            ":type" => $tab['type'],
             ":dateEvent" => $tab['dateEvent'],
             ":nomEvenement" => $tab['nomEvenement'],
             ":description" => $tab['description'],
@@ -31,11 +31,11 @@ class Modele
             ":horraireD" => $tab['horraireD'],
             ":horraireF" => $tab['horraireF'],
             ":capacite" => $tab['capacite'],
-            ":idcategorie" => $tab['idcategorie']
+            ":idcategorie" => $tab['idcategorie'],
         );
         if ($this->pdo != null) {
             // on prépare la requete 
-            $insert  = $this->pdo->prepare($requete);
+            $insert = $this->pdo->prepare($requete);
             $insert->execute($donnees);
         }
     }
