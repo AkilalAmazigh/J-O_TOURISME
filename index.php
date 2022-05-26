@@ -29,8 +29,7 @@
             </li>
         </ul>
     </nav>
-
-
+    
     
     <?php
     if (isset($_GET["page"])) {
