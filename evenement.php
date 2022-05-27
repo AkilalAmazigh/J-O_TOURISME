@@ -1,5 +1,5 @@
 <?php
-$lesEvenements = $unControleur->selectAllEvenement();
+$lesEvenements = $unControleur->selectAllEvenements();
 
 require_once("vue/vue_insert_evenement.php");
 if (isset($_POST['Valider'])) {
@@ -8,5 +8,5 @@ if (isset($_POST['Valider'])) {
     var_dump($insertEvenement);
 }
 
-$lesEvenements = $unControleur->selectAllEvenement();
+$lesEvenements = $unControleur->selectAllEvenements();
 require_once("vue/vue_les_evenements.php");
