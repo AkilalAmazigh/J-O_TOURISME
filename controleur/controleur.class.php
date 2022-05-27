@@ -20,13 +20,31 @@
             $this->unModele->insertEvenement($tab);
         }
 
-        public function selectAllEvenement(){
-            $lesEvenements = $this->unModele->selectAllEvenement();
+        public function selectAllEvenements(){
+            $lesEvenements = $this->unModele->selectAllEvenements();
 
             // s'il y a des traitements à faire
 
             // on renvoie les evenements 
             return $lesEvenements;
+        }
+
+        # Service
+
+        public function insertService($tab){
+            // on controle la validité des données 
+
+            //appel au modèle pour l'insertion 
+            $this->unModele->insertService($tab);
+        }
+
+        public function selectAllServices(){
+            $lesServices = $this->unModele->selectAllServices();
+
+            // s'il y a des traitements à faire
+
+            // on renvoie les evenements 
+            return $lesServices;
         }
     }
 

@@ -55,7 +55,7 @@
             require_once("evenement.php");
             break;
         case 2:
-            require_once("typeservice.php");
+            require_once("service.php");
             break;
         case 3:
             require_once("inscription.php");
