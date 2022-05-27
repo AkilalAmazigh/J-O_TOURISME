@@ -27,7 +27,7 @@
                 <td>".$unEvenement["horraireD"]."</td>
                 <td>".$unEvenement["horraireF"]."</td>
                 <td>".$unEvenement["capacite"]."</td>
-                <td>".$unEvenement["idcapacite"]."</td>";
+                <td>".$unEvenement["idcategorie"]."</td>";
             echo "</tr>";
         }
     ?>
