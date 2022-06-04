@@ -1,4 +1,4 @@
-<h2> Liste des évènements </h2>
+<h2> Liste des services </h2>
 
 <table border="1">
     <tr>
@@ -12,17 +12,29 @@
     </tr>
 
     <?php
-        foreach($lesServices as $unService){
+        foreach($lesServices as $unService)
+        {
             echo 
             "<tr>
-                <td>".$unService["idevenement"]."</td>
+                <td>".$unService["idservice"]."</td>
                 <td>".$unService["libelle"]."</td>
                 <td>".$unService["adresse"]."</td>
                 <td>".$unService["prix"]."</td>
                 <td>".$unService["tel"]."</td>
                 <td>".$unService["email"]."</td>
                 <td>".$unService["idtypeservices"]."</td>";
-            echo "</tr>";
         }
+
+        //Opération supprimer et modifier
+        echo "<td>";
+        echo "<a href='index.php?page=2&action=sup&idservice=".$unService['idservice']."'>";
+        echo "<img src='images/Delete.jpeg' height='30' width='30'";
+        echo "</a>";
+        echo "<a href='index.php?page=2&action=edit&idservice=".$unService['idservice']."'>";
+        echo "<img src='images/Edit.png' height='30' width='30'";
+        echo "</a>";
+        echo "</td>";
+        echo "</tr> ";
+
     ?>
 </table>

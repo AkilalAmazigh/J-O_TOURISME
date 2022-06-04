@@ -147,3 +147,10 @@ CREATE TABLE Inscription(
 	,CONSTRAINT Inscription_Client0_FK FOREIGN KEY (idclient) REFERENCES Client(idclient)
 )ENGINE=InnoDB;
 
+#---------------------------------------------------------
+# insertion de Typeservice dans la table Typeservice
+#--------------------------------------------------------
+insert into Typeservice values (NULL, "Hotels");
+insert into Typeservice values (NULL, "Bars & Restaurants");
+insert into Typeservice values (NULL, "Culture");
+insert into Typeservice values (NULL, "Sport");
