@@ -1,4 +1,5 @@
 <?php
+$lesCategories = $unControleur->selectALLCategories();
 $lesEvenements = $unControleur->selectAllEvenements();
 
 
