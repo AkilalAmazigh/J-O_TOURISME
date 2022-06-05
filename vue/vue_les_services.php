@@ -9,6 +9,7 @@
         <td> Téléphone </td>
         <td> Email </td>
         <td> Id type-services </td>
+        <td> Opérations </td>
     </tr>
 
     <?php
@@ -23,18 +24,19 @@
                 <td>".$unService["tel"]."</td>
                 <td>".$unService["email"]."</td>
                 <td>".$unService["idtypeservices"]."</td>";
-        }
+        
 
         //Opération supprimer et modifier
         echo "<td>";
-        echo "<a href='index.php?page=2&action=sup&idservice=".$unService['idservice']."'>";
-        echo "<img src='images/Delete.jpeg' height='30' width='30'";
-        echo "</a>";
-        echo "<a href='index.php?page=2&action=edit&idservice=".$unService['idservice']."'>";
-        echo "<img src='images/Edit.png' height='30' width='30'";
-        echo "</a>";
+            echo "<a href='index.php?page=2&action=sup&idservice=".$unService['idservice']."'>";
+            echo "<img src='images/Delete.jpeg' height='30' width='30'";
+            echo "</a>";
+            echo "<a href='index.php?page=2&action=edit&idservice=".$unService['idservice']."'>";
+            echo "<img src='images/Edit.png' height='30' width='30'";
+            echo "</a>";
         echo "</td>";
         echo "</tr> ";
+    }
 
     ?>
 </table>

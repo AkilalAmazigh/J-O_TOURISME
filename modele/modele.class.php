@@ -56,6 +56,60 @@ class Modele
         }
     }
 
+    public function selectWhereEvenement($idevenement)
+    {
+        $requete = "select * from evenement where idevenement = :idevenement;";
+        if($this->pdo != null)
+        {
+            $donnees =array(":idevenement"=>$idevenement);
+            //on prepare la requete
+            $select = $this->pdo->prepare($requete);
+            $select->execute($donnees); 
+            //extraction du service
+            return $select->fetch();
+        }
+        else
+        {
+            return null;
+        }
+
+    }
+
+    public function deleteEvenement($idevenement)
+    {
+        $requete = "delete from evenement where idevenement = :idevenement;";
+        $donnees =array(":idevenement"=>$idevenement);
+        if($this->pdo != null)
+        {
+           //on prepare la requete
+           $delete = $this->pdo->prepare($requete);
+           $delete->execute($donnees); 
+        }
+
+    }
+
+    public function updateEvenement($tab)
+    {
+        $requete = "update evenement set type=:type, dateEvent=:dateEvent, nomEvenement=:nomEvenement, description=:description, adresse=:adresse, horraireD=:horraireD, horraireF=:horraireF, capacite=:capacite, idcategorie=:idcategorie  where idevenement= :idevenement;";
+        $donnees = array(
+            ":type" => $tab['type'],
+            ":dateEvent" => $tab['dateEvent'],
+            ":nomEvenement" => $tab['nomEvenement'],
+            ":description" => $tab['description'],
+            ":adresse" => $tab['adresse'],
+            ":horraireD" => $tab['horraireD'],
+            ":horraireF" => $tab['horraireF'],
+            ":capacite" => $tab['capacite'],
+            ":idcategorie" => $tab['idcategorie'],
+        );
+        if($this->pdo != null)
+        {
+            //on prepare la requete
+            $insert = $this->pdo->prepare($requete);
+            $insert->execute($donnees);
+        }
+    }
+
     //////////// Services //////////////
     
     public function insertService($tab)
@@ -91,6 +145,7 @@ class Modele
             return null;
         }
     }
+
     public function deleteService($idservice)
     {
         $requete = "delete from service where idservice = :idservice;";
@@ -103,6 +158,7 @@ class Modele
         }
 
     }
+
     public function selectWhereService($idservice)
     {
         $requete = "select * from service where idservice = :idservice;";
@@ -121,11 +177,11 @@ class Modele
         }
 
     }
+
     public function updateService($tab)
     {
         $requete = "update service set libelle=:libelle, adresse=:adresse, prix=:prix, tel=:tel, email=:email, idtypeservices=:idtypeservices  where idservice= :idservice;";
-        $donnees = array
-        (
+        $donnees = array(
         ":idservice"=>$tab['idservice'],
         ":libelle"=>$tab['libelle'],
         ":adresse"=>$tab['adresse'],
@@ -147,14 +203,9 @@ class Modele
 
     public function insertCategorie($tab)
     {
-        $requete = "insert into service values (null, :libelle, :adresse, :prix, :tel, :email, :idtypeservices)";
+        $requete = "insert into categorie values (null, :libelle)";
         $donnees = array(
             ":libelle" => $tab['libelle'],
-            ":adresse" => $tab['adresse'],
-            ":prix" => $tab['prix'],
-            ":tel" => $tab['tel'],
-            ":email" => $tab['email'],
-            ":idtypeservices" => $tab['idtypeservices'],
         );
         if ($this->pdo != null) {
             // on prépare la requete 
@@ -166,7 +217,7 @@ class Modele
 
     public function selectAllCategories()
     {
-        $requete = "select * from service;";
+        $requete = "select * from categorie;";
 
         if ($this->pdo != null) {
             // on prépare la requete 
