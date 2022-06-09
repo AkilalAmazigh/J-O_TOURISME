@@ -4,12 +4,18 @@
     box-sizing: border-box;
 }
 
+
+body {
+    height: 100vh;
+    position: relative;
+}
+
 /* index.php */
 
 /* navbar */
 
 .navigation_navbar {
-    background: linear-gradient(-90deg, rgba(156,156,156,1) 0%, rgba(18,103,120,0.9052214635854342) 38%, rgba(9,58,121,0.9220281862745098) 80%);
+    background: linear-gradient(-90deg, rgba(156, 156, 156, 1) 0%, rgba(18, 103, 120, 0.9052214635854342) 38%, rgba(9, 58, 121, 0.9220281862745098) 80%);
 }
 
 .navigation_navbar ul {

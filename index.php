@@ -80,13 +80,6 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
         }
         ?>
     </header>
-
-   
-
-    <footer>
-
-    </footer>
-
 </body>
 
 </html>
