@@ -147,6 +147,16 @@ CREATE TABLE Inscription(
 	,CONSTRAINT Inscription_Client0_FK FOREIGN KEY (idclient) REFERENCES Client(idclient)
 )ENGINE=InnoDB;
 
+
+create table user (
+    iduser int(3) not null auto_increment,
+    email varchar(255),
+    mdp varchar(255),
+    role enum ("admin", "user"),
+    primary key(iduser)
+);
+
+
 #---------------------------------------------------------
 # insertion de Typeservice dans la table Typeservice
 #--------------------------------------------------------
@@ -160,3 +170,11 @@ insert into Typeservice values (NULL, "Sport");
 #--------------------------------------------------------
 insert into Categorie values (NULL, "Epreuves");
 insert into Categorie values (NULL, "Ceremonies");
+
+
+
+#---------------------------------------------------------
+# insertion de USER dans la user Categorie
+#--------------------------------------------------------
+insert into user values (NULL, "d@gmail.com", "123", "admin");
+insert into user values (NULL, "m@gmail.com", "123", "admin");

@@ -1,9 +1,11 @@
 <?php
+session_start();
 require_once("controleur/controleur.class.php");
 require_once("controleur/config_bdd.php");
 
 // instanciation du controleur 
 $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
+
 
 ?>
 
@@ -36,7 +38,14 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
                     <a href="index.php?page=3">S'inscrire</a>
                 </li>
                 <li>
-                    <a href="index.php?page=4">Se connecter</a>
+                    <?php
+                    if(isset($_SESSION['email'])){
+                        echo ' <a href="index.php?page=5">Se Déconnecter</a>';
+                    }else {
+                        echo '<a href="index.php?page=4">Se connecter</a>';
+                    }
+                    ?>
+                    
                 </li>
             </ul>
         </nav>
@@ -47,11 +56,11 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
         if (isset($_GET["page"])) {
             $page = $_GET["page"];
         } else {
-            $page = 0;
+        $page = 0;
         }
         switch ($page) {
             case 0:
-                require_once("index.php");
+                require_once("home.php");
                 break;
             case 1:
                 require_once("evenement.php");
@@ -65,15 +74,14 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
             case 4:
                 require_once("connexion.php");
                 break;
+            case 5:
+                require_once("deconnexion.php");
+                break;
         }
         ?>
     </header>
 
-    <main>
-
-        <h1> Mettre le titre ici ! </h1>
-    
-    </main>
+   
 
     <footer>
 

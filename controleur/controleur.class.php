@@ -113,6 +113,15 @@
             return $lesCategories;
         }
 
+        ################ user ################
+        
+        public function selectUser($email){
+            // on controle la validité des données 
+           return $this->unModele->selectUser($email);
+            
+        }
+
+
 
     }
 

@@ -100,7 +100,8 @@ class Modele
             ":horraireD" => $tab['horraireD'],
             ":horraireF" => $tab['horraireF'],
             ":capacite" => $tab['capacite'],
-            ":idcategorie" => $tab['idcategorie']
+            ":idcategorie" => $tab['idcategorie'],
+            ":idevenement" => $tab['idevenement']
         );
         if($this->pdo != null)
         {
@@ -256,6 +257,23 @@ class Modele
             $select->execute();
             //extraction de tous les clients
             return $select->fetchAll();
+        } else {
+            return null;
+        }
+    }
+
+    /////////////// USER ////////////
+
+    public function selectUser($email)
+    {
+        $requete = "SELECT * FROM user WHERE email = '$email'";
+
+        if ($this->pdo != null) {
+            // on prépare la requete 
+            $select  = $this->pdo->prepare($requete);
+            $select->execute();
+            //extraction de tous les clients
+            return $select->fetch();
         } else {
             return null;
         }
