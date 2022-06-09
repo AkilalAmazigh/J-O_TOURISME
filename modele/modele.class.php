@@ -100,7 +100,7 @@ class Modele
             ":horraireD" => $tab['horraireD'],
             ":horraireF" => $tab['horraireF'],
             ":capacite" => $tab['capacite'],
-            ":idcategorie" => $tab['idcategorie'],
+            ":idcategorie" => $tab['idcategorie']
         );
         if($this->pdo != null)
         {

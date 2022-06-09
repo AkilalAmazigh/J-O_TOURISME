@@ -154,3 +154,9 @@ insert into Typeservice values (NULL, "Hotels");
 insert into Typeservice values (NULL, "Bars & Restaurants");
 insert into Typeservice values (NULL, "Culture");
 insert into Typeservice values (NULL, "Sport");
+
+#---------------------------------------------------------
+# insertion de Categories dans la table Categorie
+#--------------------------------------------------------
+insert into Categorie values (NULL, "Epreuves");
+insert into Categorie values (NULL, "Ceremonies");
