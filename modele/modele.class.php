@@ -90,7 +90,7 @@ class Modele
 
     public function updateEvenement($tab)
     {
-        $requete = "update evenement set type=:type, dateEvent=:dateEvent, nomEvenement=:nomEvenement, description=:description, adresse=:adresse, horraireD=:horraireD, horraireF=:horraireF, capacite=:capacite, idcategorie=:idcategorie  where idevenement= :idevenement;";
+        $requete = "update evenement set type=:type, dateEvent=:dateEvent, nomEvenement=:nomEvenement, description=:description, adresse=:adresse, horraireD=:horraireD, horraireF=:horraireF, capacite=:capacite, idcategorie=:idcategorie  where idevenement=:idevenement;";
         $donnees = array(
             ":type" => $tab['type'],
             ":dateEvent" => $tab['dateEvent'],
