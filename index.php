@@ -18,7 +18,7 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet" type="text/css">
-    <title>Document</title> 
+    <title>Document</title>
 </head>
 
 <body>
@@ -26,7 +26,9 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
         <nav class="navigation_navbar">
             <ul>
                 <li>
-                    <a href="index.php?page=0"><img class="image-logo" src="images/logo.png" alt="logo jeux olympiques" /></a>
+                    <a href="home.php?page=0">
+                        <img class="image-logo" src="images/logo.png" alt="logo jeux olympiques" />
+                    </a>
                 </li>
                 <li>
                     <a href="index.php?page=1">Évènements</a>
@@ -39,47 +41,45 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
                 </li>
                 <li>
                     <?php
-                    if(isset($_SESSION['email'])){
+                    if (isset($_SESSION['email'])) {
                         echo ' <a href="index.php?page=5">Se Déconnecter</a>';
-                    }else {
+                    } else {
                         echo '<a href="index.php?page=4">Se connecter</a>';
                     }
                     ?>
-                    
+
                 </li>
             </ul>
         </nav>
-
-
-
-        <?php
-        if (isset($_GET["page"])) {
-            $page = $_GET["page"];
-        } else {
-        $page = 0;
-        }
-        switch ($page) {
-            case 0:
-                require_once("home.php");
-                break;
-            case 1:
-                require_once("evenement.php");
-                break;
-            case 2:
-                require_once("service.php");
-                break;
-            case 3:
-                require_once("inscription.php");
-                break;
-            case 4:
-                require_once("connexion.php");
-                break;
-            case 5:
-                require_once("deconnexion.php");
-                break;
-        }
-        ?>
     </header>
+    <?php
+    if (isset($_GET["page"])) {
+        $page = $_GET["page"];
+    } else {
+        $page = 0;
+    }
+    switch ($page) {
+        case 0:
+            require_once("home.php");
+            break;
+        case 1:
+            require_once("evenement.php");
+            break;
+        case 2:
+            require_once("service.php");
+            break;
+        case 3:
+            require_once("inscription.php");
+            break;
+        case 4:
+            require_once("connexion.php");
+            break;
+        case 5:
+            require_once("deconnexion.php");
+            break;
+    }
+    ?>
+    <?php require_once('footer.php'); ?>
 </body>
 
 </html>
