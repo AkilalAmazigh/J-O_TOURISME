@@ -29,7 +29,7 @@
         //Opération supprimer et modifier
         echo "<td>";
             echo "<a href='index.php?page=2&action=sup&idservice=".$unService['idservice']."'>";
-            echo "<img src='images/Delete.jpeg' height='30' width='30'";
+            echo "<img src='images/Delete.png' height='30' width='30'";
             echo "</a>";
             echo "<a href='index.php?page=2&action=edit&idservice=".$unService['idservice']."'>";
             echo "<img src='images/Edit.png' height='30' width='30'";
