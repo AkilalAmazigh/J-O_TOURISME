@@ -18,6 +18,7 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="css/home.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 
@@ -26,7 +27,7 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
         <nav class="navigation_navbar">
             <ul>
                 <li>
-                    <a href="home.php?page=0">
+                    <a href="index.php?page=0">
                         <img class="image-logo" src="images/logo.png" alt="logo jeux olympiques" />
                     </a>
                 </li>
