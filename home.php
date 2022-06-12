@@ -1,6 +1,6 @@
 <main>
 
-    <h1> Mettre le titre ici ! </h1>
+    <h1 class="titre-principal"> Mettre le titre ici ! </h1>
 
     <div class="carroussel-image">
         <div class="carroussel-image-relative">

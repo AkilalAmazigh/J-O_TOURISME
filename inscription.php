@@ -6,52 +6,35 @@ $controleur = new Controleur($serveur, $bdd, $user, $mdp);
 
 
 <main>
-        <form method="post" action="#" class="form_connex" autocomplete="off">
-            <h3>Veuillez remplir ce formulaire pour vous inscrire.</h2>
-                <table border="2">
-                    <tr>
-                        <td>Nom : </td>
-                        <td class="tdtd"><input type="text" name="nom"></td>
-                    </tr>
-                    <tr>
-                        <td>Prenom : </td>
-                        <td class="tdtd"><input type="text" name="prenom"></td>
-                    </tr>
-                    <tr>
-                        <td>Adresse : </td>
-                        <td class="tdtd"><input type="text" name="adresse"></td>
-                    </tr>
-                    <tr>
-                        <td>Email : </td>
-                        <td class="tdtd"><input type="text" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Mot de passe : </td>
-                        <td class="tdtd"><input type="password" name="mdp"></td>
-                    </tr>
-                    <tr>
-                        <td><input class="boutonP" type="reset" name="Annuler" value="Annuler"></td>
-                        <td><input class="boutonP" type="submit" name="seConnecter" value="Valider"></td>
-                    </tr>
-                    <?php
-                    if (isset($_POST['seConnecter'])) {
-                        if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
-                            $email = $_POST['email'];
-                            $mdp = $_POST['mdp'];
-                            $unUser = $controleur->selectUser($email);
-                            $_SESSION['email'] = $unUser['email'];
-                            $_SESSION['mdp'] = $unUser['mdp'];
-                            if ($_SESSION['email'] == $email && $_SESSION['mdp'] == $mdp) {
-                               header("Location: index.php?page=0");
-                            } else {
-                               echo "Veuillez verifier vos emails !";
-                           }
-                        } else {
-                            echo "Les champs ne sont pas remplis";
-                        }
-                    }
-                
-                    ?>
-                </table>
-        </form>
-    </main>
+    <form method="post" action="#" class="form_connex" autocomplete="off">
+        <h3>Veuillez remplir ce formulaire pour vous inscrire.</h2>
+            <table border="2">
+                <tr>
+                    <td>Nom : </td>
+                    <td class="tdtd"><input type="text" name="nom"></td>
+                </tr>
+                <tr>
+                    <td>Prenom : </td>
+                    <td class="tdtd"><input type="text" name="prenom"></td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td class="tdtd"><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Mot de passe : </td>
+                    <td class="tdtd"><input type="password" name="mdp"></td>
+                </tr>
+                <tr>
+                    <td><input class="boutonP" type="reset" name="Annuler" value="Annuler"></td>
+                    <td><input class="boutonP" type="submit" name="Sinscrire" value="S'inscrire"></td>
+                </tr>
+                <?php
+                if (isset($_POST['Sinscrire'])) {
+                    echo $controleur->insertUser($_POST);
+                }
+
+                ?>
+            </table>
+    </form>
+</main>

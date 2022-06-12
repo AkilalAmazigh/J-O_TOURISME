@@ -264,6 +264,24 @@ class Modele
 
     /////////////// USER ////////////
 
+    public function insertUser($tab)
+    {
+        $requete = "insert into user values (null, :nom, :prenom, :email, :mdp, :rolee)";
+        $donnees = array(
+        ":nom"=>$tab['nom'],
+        ":prenom"=>$tab['prenom'],
+        ":email"=>$tab['email'],
+        ":mdp"=>$tab['mdp'],
+        ":rolee"=>"user"
+        );
+        if($this->pdo != null)
+        {
+            //on prepare la requete
+            $insert = $this->pdo->prepare($requete);
+            $insert->execute($donnees);
+        }
+    }
+
     public function selectUser($email)
     {
         $requete = "SELECT * FROM user WHERE email = '$email'";
@@ -278,4 +296,5 @@ class Modele
             return null;
         }
     }
+
 }

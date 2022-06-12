@@ -38,7 +38,14 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
                     <a href="index.php?page=2">Autres services</a>
                 </li>
                 <li>
-                    <a href="index.php?page=3">S'inscrire</a>
+                <?php
+                    if (isset($_SESSION['email'])) {
+                        echo ' <a href="index.php?page=3">Mon profil</a>';
+                    } else {
+                        echo '<a href="index.php?page=3">S\'inscrire</a>';
+                    }
+                    ?>
+                    <!-- <a href="index.php?page=3">S'inscrire</a> -->
                 </li>
                 <li>
                     <?php

@@ -114,13 +114,25 @@
         }
 
         ################ user ################
+
+        public function insertUser($tab){
+            // on controle la validité des données 
+            foreach($tab as $onevalue){
+               if ($onevalue == ""){
+                return "Veuillez remplir tous les champs";
+               } 
+            }
+            echo "<p>Utilisateur enregistré !</p>";
+            $this->unModele->insertUser($tab);
+            
+        }
+
         
         public function selectUser($email){
             // on controle la validité des données 
            return $this->unModele->selectUser($email);
             
         }
-
 
 
     }

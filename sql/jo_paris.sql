@@ -150,9 +150,11 @@ CREATE TABLE Inscription(
 
 create table user (
     iduser int(3) not null auto_increment,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
     email varchar(255),
     mdp varchar(255),
-    role enum ("admin", "user"),
+    rolee varchar(20),
     primary key(iduser)
 );
 
@@ -176,5 +178,6 @@ insert into Categorie values (NULL, "Ceremonies");
 #---------------------------------------------------------
 # insertion de USER dans la user Categorie
 #--------------------------------------------------------
-insert into user values (NULL, "d@gmail.com", "123", "admin");
-insert into user values (NULL, "m@gmail.com", "123", "admin");
+insert into user values (NULL, "Levy", "Dan", "d@gmail.com", "123", "admin");
+insert into user values (NULL, "Akilal", "Amazigh", "m@gmail.com", "123", "admin");
+insert into user values (NULL, "Housse", "Thomas", "t@gmail.com", "123", "admin");

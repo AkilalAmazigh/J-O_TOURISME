@@ -3,7 +3,7 @@
         <div>
             <p style="text-align: center;">Coryright©
             <ul>
-                <li>Groupe info cfa 2022 ;)</li>
+                <li>Amazigh - Dan - Thomas - CFA INSTA 2022 ;)</li>
             </ul>
             </p>
         </div>

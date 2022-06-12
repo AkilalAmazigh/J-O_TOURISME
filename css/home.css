@@ -1,4 +1,9 @@
 /* home.php */
+
+.titre-principal {
+    text-align: center;
+}
+
 .carroussel-image, .image-accueil {
     display: flex;
     flex-wrap: wrap;
