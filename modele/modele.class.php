@@ -21,7 +21,7 @@ class Modele
 
     public function insertEvenement($tab)
     {
-        $requete = "insert into evenement values (null, :type, :dateEvent, :nomEvenement, :description, :adresse, :horraireD, :horraireF, :capacite, :idcategorie)";
+        $requete = "insert into Evenement values (null, :type, :dateEvent, :nomEvenement, :description, :adresse, :horraireD, :horraireF, :capacite, :idcategorie)";
         $donnees = array(
             ":type" => $tab['type'],
             ":dateEvent" => $tab['dateEvent'],
@@ -43,7 +43,7 @@ class Modele
 
     public function selectAllEvenements()
     {
-        $requete = "select * from evenement;";
+        $requete = "select * from Evenement;";
 
         if ($this->pdo != null) {
             // on prépare la requete 
@@ -58,7 +58,7 @@ class Modele
 
     public function selectWhereEvenement($idevenement)
     {
-        $requete = "select * from evenement where idevenement = :idevenement;";
+        $requete = "select * from Evenement where idevenement = :idevenement;";
         if($this->pdo != null)
         {
             $donnees =array(":idevenement"=>$idevenement);
@@ -77,7 +77,7 @@ class Modele
 
     public function deleteEvenement($idevenement)
     {
-        $requete = "delete from evenement where idevenement = :idevenement;";
+        $requete = "delete from Evenement where idevenement = :idevenement;";
         $donnees =array(":idevenement"=>$idevenement);
         if($this->pdo != null)
         {
@@ -90,7 +90,7 @@ class Modele
 
     public function updateEvenement($tab)
     {
-        $requete = "update evenement set type=:type, dateEvent=:dateEvent, nomEvenement=:nomEvenement, description=:description, adresse=:adresse, horraireD=:horraireD, horraireF=:horraireF, capacite=:capacite, idcategorie=:idcategorie  where idevenement=:idevenement;";
+        $requete = "update Evenement set type=:type, dateEvent=:dateEvent, nomEvenement=:nomEvenement, description=:description, adresse=:adresse, horraireD=:horraireD, horraireF=:horraireF, capacite=:capacite, idcategorie=:idcategorie  where idevenement=:idevenement;";
         $donnees = array(
             ":type" => $tab['type'],
             ":dateEvent" => $tab['dateEvent'],
@@ -115,7 +115,7 @@ class Modele
     
     public function insertService($tab)
     {
-        $requete = "insert into service values (null, :libelle, :adresse, :prix, :tel, :email, :idtypeservices)";
+        $requete = "insert into Service values (null, :libelle, :adresse, :prix, :tel, :email, :idtypeservices)";
         $donnees = array(
             ":libelle" => $tab['libelle'],
             ":adresse" => $tab['adresse'],
@@ -134,7 +134,7 @@ class Modele
 
     public function selectAllServices()
     {
-        $requete = "select * from service;";
+        $requete = "select * from Service;";
 
         if ($this->pdo != null) {
             // on prépare la requete 
@@ -149,7 +149,7 @@ class Modele
 
     public function deleteService($idservice)
     {
-        $requete = "delete from service where idservice = :idservice;";
+        $requete = "delete from Service where idservice = :idservice;";
         $donnees =array(":idservice"=>$idservice);
         if($this->pdo != null)
         {
@@ -162,7 +162,7 @@ class Modele
 
     public function selectWhereService($idservice)
     {
-        $requete = "select * from service where idservice = :idservice;";
+        $requete = "select * from Service where idservice = :idservice;";
         if($this->pdo != null)
         {
             $donnees =array(":idservice"=>$idservice);
@@ -181,7 +181,7 @@ class Modele
 
     public function updateService($tab)
     {
-        $requete = "update service set libelle=:libelle, adresse=:adresse, prix=:prix, tel=:tel, email=:email, idtypeservices=:idtypeservices  where idservice= :idservice;";
+        $requete = "update Service set libelle=:libelle, adresse=:adresse, prix=:prix, tel=:tel, email=:email, idtypeservices=:idtypeservices  where idservice= :idservice;";
         $donnees = array(
         ":idservice"=>$tab['idservice'],
         ":libelle"=>$tab['libelle'],
@@ -204,7 +204,7 @@ class Modele
 
     public function insertCategorie($tab)
     {
-        $requete = "insert into categorie values (null, :libelle)";
+        $requete = "insert into Categorie values (null, :libelle)";
         $donnees = array(
             ":libelle" => $tab['libelle'],
         );
@@ -218,7 +218,7 @@ class Modele
 
     public function selectAllCategories()
     {
-        $requete = "select * from categorie;";
+        $requete = "select * from Categorie;";
 
         if ($this->pdo != null) {
             // on prépare la requete 
@@ -235,7 +235,7 @@ class Modele
 
     public function insertTypeservice($tab)
     {
-        $requete = "insert into typeservice values (null, :libelle)";
+        $requete = "insert into Typeservice values (null, :libelle)";
         $donnees = array(
             ":libelle" => $tab['libelle'],
         );
@@ -249,7 +249,7 @@ class Modele
 
     public function selectAllTypeservices()
     {
-        $requete = "select * from typeservice;";
+        $requete = "select * from Typeservice;";
 
         if ($this->pdo != null) {
             // on prépare la requete 
