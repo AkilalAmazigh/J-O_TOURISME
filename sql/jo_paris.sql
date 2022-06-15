@@ -157,23 +157,13 @@ create table user (
     primary key(iduser)
 );
 
+
 #---------------------------------------------------------
 # insertion de Categories dans la table Categorie
 #--------------------------------------------------------
 insert into Categorie values (NULL, "Epreuves");
 insert into Categorie values (NULL, "Ceremonies");
 
-
-#---------------------------------------------------------
-# insertion de Evenement dans la table Evenement
-#--------------------------------------------------------
-
-insert into `Evenement` values (NULL, "Epreuve natation", "2024-07-14","Epreuve natation masculine", "Piscine ouverte", "Centre Aquatique de Saint-Denis", "10:30", "12:00", 4000, 01);
-insert into `Evenement` values (NULL, "Epreuve natation", "2024-07-15","Epreuve natation feminine", "Piscine ouverte", "Centre Aquatique de Saint-Denis", "10:30", "12:00", 4000, 01);
-insert into `Evenement` values (NULL, "Epreuve course", "2024-07-16","Epreuve course feminine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 1600, 01);
-insert into `Evenement` values (NULL, "Epreuve course", "2024-07-17","Epreuve course masculine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 2300, 01);
-insert into `Evenement` values (NULL, "Epreuve Lancer de Disque", "2024-07-18","Epreuve force feminine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 3655, 01);
-insert into `Evenement` values (NULL, "Epreuve Lancer de Disque", "2024-07-19","Epreuve force masculine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 5000, 01);
 
 #---------------------------------------------------------
 # insertion de Typeservice dans la table Typeservice
@@ -201,6 +191,19 @@ insert into `Service` values (NULL, "Muséum d'Histoire naturelle", "57 Rue Cuvi
 insert into `Service` values (NULL, "Fitness Park", "65 Rue de Bagnolet", 20, "0185496285", "Fitness20@gmail.com", 04);
 insert into `Service` values (NULL, "Picine Paris", "4 Rue Louis Armand", 7, "0181687415", "Picineparis@gmail.com", 04);
 insert into `Service` values (NULL, "Basic-Fit", "58 Av. Philippe Auguste", 20, "0145879254", "Basic-Fit@gmail.com", 04);
+
+#---------------------------------------------------------
+# insertion de Evenement dans la table Evenement
+#--------------------------------------------------------
+
+insert into `Evenement` values (NULL, "Epreuve natation", "2024-07-14","Epreuve natation masculine", "Piscine ouverte", "Centre Aquatique de Saint-Denis", "10:30", "12:00", 4000, 01);
+insert into `Evenement` values (NULL, "Epreuve natation", "2024-07-15","Epreuve natation feminine", "Piscine ouverte", "Centre Aquatique de Saint-Denis", "10:30", "12:00", 4000, 01);
+insert into `Evenement` values (NULL, "Epreuve course", "2024-07-16","Epreuve course feminine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 1600, 01);
+insert into `Evenement` values (NULL, "Epreuve course", "2024-07-17","Epreuve course masculine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 2300, 01);
+insert into `Evenement` values (NULL, "Epreuve Lancer de Disque", "2024-07-18","Epreuve force feminine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 3655, 01);
+insert into `Evenement` values (NULL, "Epreuve Lancer de Disque", "2024-07-19","Epreuve force masculine", "Stade ouvert", "Stade de Saint-Denis", "10:30", "12:00", 5000, 01);
+
+
 #---------------------------------------------------------
 # insertion de USER dans la user Categorie
 #--------------------------------------------------------
