@@ -119,10 +119,10 @@
             // on controle la validité des données 
             foreach($tab as $onevalue){
                if ($onevalue == ""){
-                return "Veuillez remplir tous les champs";
+                return "<p style='text-align: center;'>Veuillez remplir tous les champs</p>";
                } 
             }
-            echo "<p>Utilisateur enregistré !</p>";
+            echo "<p style='text-align: center;'>Utilisateur enregistré !</p>";
             $this->unModele->insertUser($tab);
             
         }

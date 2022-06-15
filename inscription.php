@@ -7,8 +7,8 @@ $controleur = new Controleur($serveur, $bdd, $user, $mdp);
 
 <main>
     <form method="post" action="#" class="form_connex" autocomplete="off">
-        <h3>Veuillez remplir ce formulaire pour vous inscrire.</h2>
-            <table border="2">
+        <h2>Veuillez remplir ce formulaire pour vous inscrire.</h2>
+            <table class="table-insert">
                 <tr>
                     <td>Nom : </td>
                     <td class="tdtd"><input type="text" name="nom"></td>

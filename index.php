@@ -19,7 +19,7 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="css/home.css" rel="stylesheet" type="text/css">
-    <title>Document</title>
+    <title>Jeux Olympiques 2024</title>
 </head>
 
 <body>
@@ -38,14 +38,13 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
                     <a href="index.php?page=2">Autres services</a>
                 </li>
                 <li>
-                <?php
+                    <?php
                     if (isset($_SESSION['email'])) {
-                        echo ' <a href="index.php?page=3">Mon profil</a>';
+                        echo ' <a href="index.php?page=6">Mon profil</a>';
                     } else {
                         echo '<a href="index.php?page=3">S\'inscrire</a>';
                     }
                     ?>
-                    <!-- <a href="index.php?page=3">S'inscrire</a> -->
                 </li>
                 <li>
                     <?php
@@ -84,6 +83,9 @@ $unControleur = new Controleur($serveur, $bdd, $user, $mdp);
             break;
         case 5:
             require_once("deconnexion.php");
+            break;
+        case 6:
+            require_once("monprofil.php");
             break;
     }
     ?>
