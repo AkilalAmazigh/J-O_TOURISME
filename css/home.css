@@ -31,7 +31,7 @@
 }
 
 
-.carroussel-image-relative:hover > .image-accueil {
+.carroussel-image-relative a:hover > .image-accueil {
     filter: none;
     transition: 0.3s;
 }
